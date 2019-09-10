@@ -1,0 +1,18 @@
+﻿[
+  {
+    "outputFile": "Styles/Cards.css",
+    "inputFile": "Styles/Cards.scss"
+  },
+  {
+    "outputFile": "Styles/Animations.css",
+    "inputFile": "Styles/Animations.scss"
+  },
+  {
+    "outputFile": "Styles/game.css",
+    "inputFile": "Styles/game.scss"
+  },
+  {
+    "outputFile": "Styles/menu.css",
+    "inputFile": "Styles/menu.scss"
+  }
+]

@@ -1,0 +1,110 @@
+﻿/* card dimensions are height:96 width:72. 1px between cards*/
+
+.card {
+	height: 96px;
+	width: 72px;
+	position: absolute;
+	top: 252px; /* (600/2)-(96/2) */
+	left: 364px;
+	transition: top .3s, left .3s;
+
+	.cardBack {
+		background: url('../Images/cardBack.png') !important;
+	}
+
+	#Clubs14 {
+		background: url('../Images/cards.png') -1px -1px;
+	}
+
+	#Clubs13 {
+		background: url('../Images/cards.png') -877px -1px;
+	}
+
+	#Clubs12 {
+		background: url('../Images/cards.png') -804px -1px;
+	}
+
+	#Clubs11 {
+		background: url('../Images/cards.png') -731px -1px;
+	}
+
+	#Clubs10 {
+		background: url('../Images/cards.png') -658px -1px;
+	}
+
+	#Clubs9 {
+		background: url('../Images/cards.png') -585px -1px;
+	}
+
+	#Diamonds14 {
+		background: url('../Images/cards.png') -1px -295px;
+	}
+
+	#Diamonds13 {
+		background: url('../Images/cards.png') -877px -295px;
+	}
+
+	#Diamonds12 {
+		background: url('../Images/cards.png') -804px -295px;
+	}
+
+	#Diamonds11 {
+		background: url('../Images/cards.png') -731px -295px;
+	}
+
+	#Diamonds10 {
+		background: url('../Images/cards.png') -658px -295px;
+	}
+
+	#Diamonds9 {
+		background: url('../Images/cards.png') -585px -295px;
+	}
+
+	#Hearts14 {
+		background: url('../Images/cards.png') -1px -197px;
+	}
+
+	#Hearts13 {
+		background: url('../Images/cards.png') -877px -197px;
+	}
+
+	#Hearts12 {
+		background: url('../Images/cards.png') -804px -197px;
+	}
+
+	#Hearts11 {
+		background: url('../Images/cards.png') -731px -197px;
+	}
+
+	#Hearts10 {
+		background: url('../Images/cards.png') -658px -197px;
+	}
+
+	#Hearts9 {
+		background: url('../Images/cards.png') -585px -197px;
+	}
+
+	#Spades14 {
+		background: url('../Images/cards.png') -1px -99px;
+	}
+
+	#Spades13 {
+		background: url('../Images/cards.png') -877px -99px;
+	}
+
+	#Spades12 {
+		background: url('../Images/cards.png') -804px -99px;
+	}
+
+	#Spades11 {
+		background: url('../Images/cards.png') -731px -99px;
+	}
+
+	#Spades10 {
+		background: url('../Images/cards.png') -658px -99px;
+	}
+
+	#Spades9 {
+		background: url('../Images/cards.png') -585px -99px;
+	}
+}
