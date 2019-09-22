@@ -2,10 +2,18 @@
 <html lang="en-US">
 <head>
 	<meta charset="utf-8" />
-	<script src="AIScript/decentAI.js" type="text/javascript"></script>
-	<script src="AIScript/idiotAI.js" type="text/javascript"></script>
-	<script src="AIScript/testAI.js" type="text/javascript"></script>
-	<link rel="stylesheet" type="text/css" href="Styles/game.css" id="style" />
+	<script src="Models/card.js" type="text/javascript"></script>
+	<script src="Models/player.js" type="text/javascript"></script>
+	<script src="Models/settings.js" type="text/javascript"></script>
+	<script src="Models/gameState.js" type="text/javascript"></script>
+	<script src="Helpers/helperAPIs.js" type="text/javascript"></script>
+	<script src="Helpers/xor4096.js" type="text/javascript"></script>
+	<script src="AI/decentAI.js" type="text/javascript"></script>
+	<script src="AI/idiotAI.js" type="text/javascript"></script>
+	<script src="AI/testAI.js" type="text/javascript"></script>
+	<script src="Controllers/gameController.js" type="text/javascript"></script>
+	<link rel="stylesheet" type="text/css" href="Styles/cardSprites.css" id="style" />
+	<link rel="stylesheet" type="text/css" href="Styles/objectPositions.css" id="style" />
 	<link rel="stylesheet" type="text/css" href="Styles/menu.css" id="menuStyle" />
 
 	<title>Wow so Euchre</title>
@@ -24,6 +32,7 @@
 			<!--Menu stuff.-->
 			<div id="menu" class="startActive">
 				<!--Start menu-->
+				<!--
 				<div id="startMenuItems" class="menuItems">
 					<div id="newGame">
 						<button onclick="newGame()" id="newGameButt">
@@ -44,8 +53,9 @@
 						<p>&copy; Yujia Huo 2017</p>
 					</div>
 				</div>
-
+				-->
 				<!--Settings menu-->
+				<!--
 				<div id="settingsMenuItems" class="menuItems">
 					<h3>Game Settings</h3>
 					<div class="options">
@@ -166,10 +176,10 @@
 							Back
 						</button>
 					</div>
-
 				</div>
-
+				-->
 				<!--How to play page-->
+				<!--
 				<div id="howToMenuItems" class="menuItems">
 					<div id="textDiv">
 						<h3>How To Play</h3>
@@ -201,16 +211,9 @@
 					</div>
 				</div>
 			</div>
+			-->
 
-			<!--Game buttons-->
-			<div id="gameBack">
-				<!--
-				<button onclick="backFromGame()">
-					Meow
-				</button>
-				-->
-			</div>
-
+			<!--
 			<div id="orderUpPrompt">
 				<div id="alone" onclick="clickGoAlone()">
 					Alone
@@ -222,10 +225,38 @@
 				<button id="pickDiamonds" onclick="clickTrump(Suit.DIAMONDS)">Diamonds</button>
 				<button id="pass" onclick="clickPass()">Pass</button>
 			</div>
-
+			-->
 			<button id="nextStep" onclick="playNextStep()">Next Step</button>
 
 			<div id="cardsContainer">
+				<div id="southHand" class="hand">
+					<div class="card cardBack"></div>
+					<div class="card cardBack"></div>
+					<div class="card cardBack"></div>
+					<div class="card cardBack"></div>
+					<div class="card cardBack"></div>
+				</div>
+				<div id="westHand" class="hand">
+					<div class="card cardBack"></div>
+					<div class="card cardBack"></div>
+					<div class="card cardBack"></div>
+					<div class="card cardBack"></div>
+					<div class="card cardBack"></div>
+				</div>
+				<div id="northHand" class="hand">
+					<div class="card cardBack"></div>
+					<div class="card cardBack"></div>
+					<div class="card cardBack"></div>
+					<div class="card cardBack"></div>
+					<div class="card cardBack"></div>
+				</div>
+				<div id="eastHand" class="hand">
+					<div class="card cardBack"></div>
+					<div class="card cardBack"></div>
+					<div class="card cardBack"></div>
+					<div class="card cardBack"></div>
+					<div class="card cardBack"></div>
+				</div>
 			</div>
 		</div>
 	</div>

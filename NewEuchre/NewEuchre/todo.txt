@@ -1,0 +1,2 @@
+﻿Next up:
+- Make a responsive layout and start showing the deal

@@ -13,7 +13,7 @@ enum Seat {
 class Player {
 	public readonly seat: Seat;
 	public readonly ai: EuchreAI | null = null;
-	private __hand: Card[];
+	public hand: Card[];
 
 	[seat: number]: EuchreAI;
 
@@ -22,6 +22,7 @@ class Player {
 		if (ai) {
 			this.ai = ai;
 		}
+		this.hand = [];
 	}
 
 	public init() {

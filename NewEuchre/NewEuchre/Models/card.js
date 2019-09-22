@@ -41,6 +41,9 @@ var Deck = (function () {
         this.sortedDeck = this.__getSortedDeck();
         this.__cards = this.__getShuffledDeck();
     }
+    Deck.prototype.popCards = function (howMany) {
+        return this.__cards.splice(-howMany, this.__cards.length);
+    };
     Deck.prototype.__getSortedDeck = function () {
         var deck = [];
         var ranks = [Rank.Nine, Rank.Ten, Rank.Jack, Rank.Queen, Rank.King, Rank.Ace];

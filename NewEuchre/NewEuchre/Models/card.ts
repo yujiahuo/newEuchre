@@ -55,6 +55,10 @@ class Deck {
 		this.__cards = this.__getShuffledDeck();
 	}
 
+	public popCards(howMany: number): Card[] {
+		return this.__cards.splice(-howMany, this.__cards.length);
+	}
+
 	private __getSortedDeck(): Card[] {
 		let deck: Card[] = [];
 		let ranks: Rank[] = [Rank.Nine, Rank.Ten, Rank.Jack, Rank.Queen, Rank.King, Rank.Ace];

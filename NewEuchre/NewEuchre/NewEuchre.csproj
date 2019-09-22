@@ -22,20 +22,67 @@
     <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="app.css" />
     <Content Include="index.html" />
+    <Content Include="Styles\Animations.css">
+      <DependentUpon>animations.scss</DependentUpon>
+    </Content>
+    <Content Include="Styles\Animations.min.css">
+      <DependentUpon>Animations.css</DependentUpon>
+    </Content>
+    <Content Include="Styles\Cards.css">
+      <DependentUpon>cardSprites.scss</DependentUpon>
+    </Content>
+    <Content Include="Styles\Cards.min.css">
+      <DependentUpon>Cards.css</DependentUpon>
+    </Content>
+    <Content Include="Styles\menu.css">
+      <DependentUpon>menu.scss</DependentUpon>
+    </Content>
+    <Content Include="Styles\menu.min.css">
+      <DependentUpon>menu.css</DependentUpon>
+    </Content>
+    <Content Include="Styles\objectPositions.css">
+      <DependentUpon>objectPositions.scss</DependentUpon>
+    </Content>
+    <Content Include="Styles\objectPositions.min.css">
+      <DependentUpon>objectPositions.css</DependentUpon>
+    </Content>
+    <Content Include="todo.txt" />
     <Content Include="web.config" />
   </ItemGroup>
   <ItemGroup>
+    <TypeScriptCompile Include="AI\aiInterface.ts" />
     <TypeScriptCompile Include="app.ts" />
+    <TypeScriptCompile Include="AI\BiddingTestAI.ts" />
+    <TypeScriptCompile Include="AI\decentAI.ts" />
+    <TypeScriptCompile Include="AI\idiotAI.ts" />
+    <TypeScriptCompile Include="AI\MultiAI.ts" />
+    <TypeScriptCompile Include="Helpers\helperAPIs.ts" />
+    <TypeScriptCompile Include="Helpers\xor4096.ts" />
+    <TypeScriptCompile Include="Models\player.ts" />
+    <TypeScriptCompile Include="Models\settings.ts" />
+    <TypeScriptCompile Include="Models\gameState.ts" />
+    <TypeScriptCompile Include="Controllers\gameController.ts" />
+    <TypeScriptCompile Include="Models\card.ts" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Styles\animations.scss" />
+    <Content Include="Styles\cardSprites.scss" />
+    <None Include="compilerconfig.json" />
+    <None Include="compilerconfig.json.defaults">
+      <DependentUpon>compilerconfig.json</DependentUpon>
+    </None>
+    <Content Include="Styles\objectPositions.scss" />
+    <Content Include="Styles\menu.scss" />
     <None Include="web.Debug.config">
       <DependentUpon>web.config</DependentUpon>
     </None>
     <None Include="web.Release.config">
       <DependentUpon>web.config</DependentUpon>
     </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Unit Tests\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">12.0</VisualStudioVersion>

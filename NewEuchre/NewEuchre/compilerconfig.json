@@ -14,5 +14,9 @@
   {
     "outputFile": "Styles/menu.css",
     "inputFile": "Styles/menu.scss"
+  },
+  {
+    "outputFile": "Styles/objectPositions.css",
+    "inputFile": "Styles/objectPositions.scss"
   }
 ]

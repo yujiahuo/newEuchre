@@ -17,6 +17,7 @@ var Player = (function () {
         if (ai) {
             this.ai = ai;
         }
+        this.hand = [];
     }
     Player.prototype.init = function () {
         if (this.ai) {

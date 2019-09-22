@@ -14,52 +14,34 @@ interface BidResult {
 }
 
 class SessionState {
-	private __nsGamesWon = 0;
-	private __ewGamesWon = 0;
-	private __nsTotalScore = 0;
-	private __ewTotalScore = 0;
-	private __settings: Settings;
-	private __players: Player[];
-
-	public nsGamesWon(): number {
-		return this.__nsGamesWon;
-	}
-
-	public ewGamesWon(): number {
-		return this.__ewGamesWon;
-	}
-
-	public nsTotalScore(): number {
-		return this.__nsTotalScore;
-	}
-
-	public ewTotalScore(): number {
-		return this.__ewTotalScore;
-	}
-
-	public settings(): Settings {
-		return this.__settings;
-	}
-
-	public players(): Player[] {
-		return this.__players;
-	}
+	public nsGamesWon: number;
+	public ewGamesWon: number;
+	public nsTotalScore: number;
+	public ewTotalScore: number;
+	public settings: Settings;
+	public players: Player[];
 
 
 	public constructor() {
 		this.__setDefaultSettings();
+		this.nsGamesWon = 0;
+		this.ewGamesWon = 0;
+		this.nsTotalScore = 0;
+		this.ewTotalScore = 0;
 	}
 
 	private __setDefaultSettings() {
-		this.__settings.sound = true;
-		this.__settings.openHands = false;
-		this.__settings.enableNoTrump = false;
-		this.__settings.showTrickHistory = false;
-		this.__settings.statMode = false;
-		this.__settings.messageLevel = MessageLevel.Game;
-		this.__settings.numGamesToPlay = 1;
+		this.settings = {
+			sound: true,
+			openHands: false,
+			enableNoTrump: false,
+			showTrickHistory: false,
+			statMode: false,
+			messageLevel: MessageLevel.Step,
+			numGamesToPlay: 1,
+		};
 
-		this.__players = [
+		this.players = [
 			new Player(Seat.South),
 			new Player(Seat.West, new DecentAI()),
 			new Player(Seat.North, new DecentAI()),
@@ -70,76 +52,58 @@ class SessionState {
 
 class SingleGameState {
 	//Game stuff
-	private __players: Player[];
-	private __nsScore = 0; //north south
-	private __ewScore = 0; //east west
-	private __gameStage: GameStage; //TODO: do we need this?
-
-	//Bidding related
-	private __trumpCandidate: Card; //turned up card
-	private __bidResult: BidResult | null;
+	public players: Player[];
+	public nsScore: number; //north south
+	public ewScore: number; //east west
+	public gameStage: GameStage; //TODO: do we need this?
 
 	//Hand stuff
-	private __deck = new Deck();
-	private __dealer: Player;
-	private __trickNumber = 1;
-	private __nsTricksWon = 0;
-	private __ewTricksWon = 0;
+	public deck: Deck;
+	public dealer: Player;
+
+	//hand - bidding
+	public trumpCandidate: Card; //turned up card
+	public bidResult: BidResult | null;
+
+	//hand - tricks
+	public trickNumber: number;
+	public nsTricksWon: number;
+	public ewTricksWon: number;
 
 	//Trick stuff
-	private __suitLead: Suit | null; //the suit that was lead
-	private __playedCards: PlayedCard[] = []; //array of cards that have been played this trick so far
-	private __currentPlayer: Player;
+	public suitLead: Suit | null; //the suit that was lead
+	public playedCards: PlayedCard[] = []; //array of cards that have been played this trick so far
+	public currentPlayer: Player;
 
 	constructor(players: Player[]) {
-		this.__players = players;
+		this.players = players;
+		this.nsScore = 0;
+		this.ewScore = 0;
+		this.gameStage = GameStage.Deal;
 	}
 
-	public nsScore(): number {
-		return this.__nsScore;
-	}
-	public ewScore(): number {
-		return this.__ewScore;
+	public getNextPlayer(player: Player): Player {
+		return this.players[nextSeat(player.seat)];
 	}
 
-	public gameStage(): GameStage {
-		return this.__gameStage;
+	public startNewHand() {
+		this.deck = new Deck();
+		if (!this.dealer) {
+			this.dealer = this.players[rng.nextInRange(0, 3)];
+		}
+		else {
+			this.dealer = this.players[nextSeat(this.dealer.seat)];
+		}
+
+		this.__dealHands();
 	}
 
-	public trumpCandidate(): Card {
-		return this.__trumpCandidate;
-	}
-
-	public bidResult(): BidResult | null {
-		return this.__bidResult;
-	}
-
-	public dealer(): Player {
-		return this.__dealer;
-	}
-
-	public trickNumber(): number {
-		return this.__trickNumber;
-	}
-
-	public nsTricksWon(): number {
-		return this.__nsTricksWon;
-	}
-
-	public ewTricksWon(): number {
-		return this.__ewTricksWon;
-	}
-
-	public suitLead(): Suit | null {
-		return this.__suitLead;
-	}
-
-	public playedCards(): PlayedCard[] {
-		return this.__playedCards;
-	}
-
-	public currentPlayer(): Player {
-		return this.__currentPlayer;
+	private __dealHands(): void {
+		let player: Player = this.dealer;
+		for (let numToDeal of [3, 2, 3, 2, 2, 3, 2, 3]) {
+			player = this.getNextPlayer(player);
+			player.hand.push(...this.deck.popCards(numToDeal));
+		}
 	}
 
 }
