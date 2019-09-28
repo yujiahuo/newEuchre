@@ -29,11 +29,17 @@
     <Content Include="Styles\Animations.min.css">
       <DependentUpon>Animations.css</DependentUpon>
     </Content>
-    <Content Include="Styles\Cards.css">
+    <Content Include="Styles\cardSprites.css">
       <DependentUpon>cardSprites.scss</DependentUpon>
     </Content>
-    <Content Include="Styles\Cards.min.css">
-      <DependentUpon>Cards.css</DependentUpon>
+    <Content Include="Styles\cardSprites.min.css">
+      <DependentUpon>cardSprites.css</DependentUpon>
+    </Content>
+    <Content Include="Styles\core.css">
+      <DependentUpon>core.scss</DependentUpon>
+    </Content>
+    <Content Include="Styles\core.min.css">
+      <DependentUpon>core.css</DependentUpon>
     </Content>
     <Content Include="Styles\menu.css">
       <DependentUpon>menu.scss</DependentUpon>
@@ -52,7 +58,6 @@
   </ItemGroup>
   <ItemGroup>
     <TypeScriptCompile Include="AI\aiInterface.ts" />
-    <TypeScriptCompile Include="app.ts" />
     <TypeScriptCompile Include="AI\BiddingTestAI.ts" />
     <TypeScriptCompile Include="AI\decentAI.ts" />
     <TypeScriptCompile Include="AI\idiotAI.ts" />
@@ -72,8 +77,10 @@
     <None Include="compilerconfig.json.defaults">
       <DependentUpon>compilerconfig.json</DependentUpon>
     </None>
-    <Content Include="Styles\objectPositions.scss" />
     <Content Include="Styles\menu.scss" />
+    <Content Include="Styles\core.scss" />
+    <Content Include="Styles\objectPositions.scss" />
+    <Content Include="Styles\variables.scss" />
     <None Include="web.Debug.config">
       <DependentUpon>web.config</DependentUpon>
     </None>

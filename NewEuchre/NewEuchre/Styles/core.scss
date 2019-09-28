@@ -1,0 +1,14 @@
+﻿body{
+	margin: 0;
+	box-sizing: border-box;
+}
+
+.gameSpace{
+	height: 100vh;
+	width: 100%;
+	background-color: lightblue;
+	
+	#nextStep{
+		position: fixed;
+	}
+}

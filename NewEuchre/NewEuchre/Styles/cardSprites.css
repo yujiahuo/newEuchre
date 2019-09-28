@@ -3,58 +3,55 @@
   height: 96px;
   width: 72px;
   position: absolute;
-  top: 252px;
-  /* (600/2)-(96/2) */
-  left: 364px;
-  transition: top .3s, left .3s; }
-  .card .cardBack {
+  border-radius: 3px;
+  transition: all 0.5s; }
+  .card.cardBack {
     background: url("../Images/cardBack.png") !important; }
-  .card #Clubs14 {
+  .card#Clubs14 {
     background: url("../Images/cards.png") -1px -1px; }
-  .card #Clubs13 {
+  .card#Clubs13 {
     background: url("../Images/cards.png") -877px -1px; }
-  .card #Clubs12 {
+  .card#Clubs12 {
     background: url("../Images/cards.png") -804px -1px; }
-  .card #Clubs11 {
+  .card#Clubs11 {
     background: url("../Images/cards.png") -731px -1px; }
-  .card #Clubs10 {
+  .card#Clubs10 {
     background: url("../Images/cards.png") -658px -1px; }
-  .card #Clubs9 {
+  .card#Clubs9 {
     background: url("../Images/cards.png") -585px -1px; }
-  .card #Diamonds14 {
+  .card#Diamonds14 {
     background: url("../Images/cards.png") -1px -295px; }
-  .card #Diamonds13 {
+  .card#Diamonds13 {
     background: url("../Images/cards.png") -877px -295px; }
-  .card #Diamonds12 {
+  .card#Diamonds12 {
     background: url("../Images/cards.png") -804px -295px; }
-  .card #Diamonds11 {
+  .card#Diamonds11 {
     background: url("../Images/cards.png") -731px -295px; }
-  .card #Diamonds10 {
+  .card#Diamonds10 {
     background: url("../Images/cards.png") -658px -295px; }
-  .card #Diamonds9 {
+  .card#Diamonds9 {
     background: url("../Images/cards.png") -585px -295px; }
-  .card #Hearts14 {
+  .card#Hearts14 {
     background: url("../Images/cards.png") -1px -197px; }
-  .card #Hearts13 {
+  .card#Hearts13 {
     background: url("../Images/cards.png") -877px -197px; }
-  .card #Hearts12 {
+  .card#Hearts12 {
     background: url("../Images/cards.png") -804px -197px; }
-  .card #Hearts11 {
+  .card#Hearts11 {
     background: url("../Images/cards.png") -731px -197px; }
-  .card #Hearts10 {
+  .card#Hearts10 {
     background: url("../Images/cards.png") -658px -197px; }
-  .card #Hearts9 {
+  .card#Hearts9 {
     background: url("../Images/cards.png") -585px -197px; }
-  .card #Spades14 {
+  .card#Spades14 {
     background: url("../Images/cards.png") -1px -99px; }
-  .card #Spades13 {
+  .card#Spades13 {
     background: url("../Images/cards.png") -877px -99px; }
-  .card #Spades12 {
+  .card#Spades12 {
     background: url("../Images/cards.png") -804px -99px; }
-  .card #Spades11 {
+  .card#Spades11 {
     background: url("../Images/cards.png") -731px -99px; }
-  .card #Spades10 {
+  .card#Spades10 {
     background: url("../Images/cards.png") -658px -99px; }
-  .card #Spades9 {
+  .card#Spades9 {
     background: url("../Images/cards.png") -585px -99px; }
-

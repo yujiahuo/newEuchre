@@ -1,12 +1,13 @@
 ﻿/* card dimensions are height:96 width:72. 1px between cards*/
 
+@import "variables.scss";
+
 .card {
-	height: 96px;
-	width: 72px;
+	height: $cardHeight;
+	width: $cardWidth;
 	position: absolute;
-	top: 252px; /* (600/2)-(96/2) */
-	left: 364px;
-	transition: top .3s, left .3s;
+	border-radius: 3px;
+	transition: all 0.5s;
 
 	&.cardBack {
 		background: url('../Images/cardBack.png') !important;

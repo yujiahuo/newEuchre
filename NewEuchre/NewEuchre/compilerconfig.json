@@ -18,5 +18,13 @@
   {
     "outputFile": "Styles/objectPositions.css",
     "inputFile": "Styles/objectPositions.scss"
+  },
+  {
+    "outputFile": "Styles/cardSprites.css",
+    "inputFile": "Styles/cardSprites.scss"
+  },
+  {
+    "outputFile": "Styles/core.css",
+    "inputFile": "Styles/core.scss"
   }
 ]
