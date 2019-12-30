@@ -6,20 +6,20 @@
   width: 100%; }
   .cardsContainer .hand {
     position: relative;
-    width: calc(81px + 4*20px);
-    height: 118px;
+    width: calc(120px + 4*40px);
+    height: 160px;
     justify-self: center;
     align-self: center; }
     .cardsContainer .hand .card:nth-child(1) {
       left: 0; }
     .cardsContainer .hand .card:nth-child(2) {
-      left: calc(1*20px); }
+      left: calc(1*40px); }
     .cardsContainer .hand .card:nth-child(3) {
-      left: calc(2*20px); }
+      left: calc(2*40px); }
     .cardsContainer .hand .card:nth-child(4) {
-      left: calc(3*20px); }
+      left: calc(3*40px); }
     .cardsContainer .hand .card:nth-child(5) {
-      left: calc(4*20px); }
+      left: calc(4*40px); }
   .cardsContainer .southHand {
     grid-column: 2;
     grid-row: 3; }
@@ -32,3 +32,15 @@
   .cardsContainer .eastHand {
     grid-column: 3;
     grid-row: 2; }
+  .cardsContainer .played {
+    grid-column: 2;
+    grid-row: 2;
+    position: relative; }
+    .cardsContainer .played .southPlayed {
+      bottom: 0; }
+    .cardsContainer .played .westPlayed {
+      left: 0; }
+    .cardsContainer .played .northPlayed {
+      top: 0; }
+    .cardsContainer .played .eastPlayed {
+      right: 0; }

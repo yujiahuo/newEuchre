@@ -9,7 +9,7 @@
 
 	.hand{
 		position: relative;
-		width: calc(#{$cardWidth} + 4*#{$cardDistance});
+		width: calc(#{$cardWidth} + 4*#{$handCardDistance});
 		height: $cardHeight;
 		justify-self: center;
 		align-self: center;
@@ -18,16 +18,16 @@
 			left: 0;
 		}
 		.card:nth-child(2){
-			left: calc(1*#{$cardDistance});
+			left: calc(1*#{$handCardDistance});
 		}
 		.card:nth-child(3){
-			left: calc(2*#{$cardDistance});
+			left: calc(2*#{$handCardDistance});
 		}
 		.card:nth-child(4){
-			left: calc(3*#{$cardDistance});
+			left: calc(3*#{$handCardDistance});
 		}
 		.card:nth-child(5){
-			left: calc(4*#{$cardDistance});
+			left: calc(4*#{$handCardDistance});
 		}
 	}
 
@@ -49,5 +49,27 @@
 	.eastHand{
 		grid-column: 3;
 		grid-row: 2;
+	}
+
+	.played{
+		grid-column: 2;
+		grid-row: 2;
+		position: relative;
+
+		.southPlayed{
+			bottom: 0;
+		}
+
+		.westPlayed{
+			left: 0;
+		}
+
+		.northPlayed{
+			top: 0;
+		}
+
+		.eastPlayed{
+			right: 0;
+		}
 	}
 }

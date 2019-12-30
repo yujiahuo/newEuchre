@@ -62,6 +62,7 @@
     <TypeScriptCompile Include="AI\decentAI.ts" />
     <TypeScriptCompile Include="AI\idiotAI.ts" />
     <TypeScriptCompile Include="AI\MultiAI.ts" />
+    <TypeScriptCompile Include="Controllers\handController.ts" />
     <TypeScriptCompile Include="Helpers\helperAPIs.ts" />
     <TypeScriptCompile Include="Helpers\xor4096.ts" />
     <TypeScriptCompile Include="Models\player.ts" />

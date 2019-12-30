@@ -4,7 +4,7 @@
 
 @mixin cardSprite($x, $y){
 	background-position-x: calc(#{$x}*-#{$cardWidth});
-	background-position-y: calc(#{$y}*-#{$cardHeight} + #{$y}*0.8px); //TODO: this is stupid and weird. Find different sprites
+	background-position-y: calc(#{$y}*-#{$cardHeight});
 }
 
 .card {
@@ -13,105 +13,105 @@
 	position: absolute;
 	border-radius: 3px;
 	transition: all 0.5s;
-	background-image: url('../Images/cards.gif');
+	background-image: url('../Images/cards.png');
 
 	&.cardBack {
 		@include cardSprite(0, 4);
 	}
 
 	&#Clubs14 {
-		@include cardSprite(12, 2);
+		@include cardSprite(0, #{$clubsRow});
 	}
 
 	&#Clubs13 {
-		@include cardSprite(11, 2);
+		@include cardSprite(12, #{$clubsRow});
 	}
 
 	&#Clubs12 {
-		@include cardSprite(10, 2);
+		@include cardSprite(11, #{$clubsRow});
 	}
 
 	&#Clubs11 {
-		@include cardSprite(9, 2);
+		@include cardSprite(10, #{$clubsRow});
 	}
 
 	&#Clubs10 {
-		@include cardSprite(8, 2);
+		@include cardSprite(9, #{$clubsRow});
 	}
 
 	&#Clubs9 {
-		@include cardSprite(7, 2);
+		@include cardSprite(8, #{$clubsRow});
 	}
 
 	&#Diamonds14 {
-		@include cardSprite(12, 1);
+		@include cardSprite(0, #{$diamondsRow});
 	}
 
 	&#Diamonds13 {
-		@include cardSprite(11, 1);
+		@include cardSprite(12, #{$diamondsRow});
 	}
 
 	&#Diamonds12 {
-		@include cardSprite(10, 1);
+		@include cardSprite(11, #{$diamondsRow});
 	}
 
 	&#Diamonds11 {
-		@include cardSprite(9, 1);
+		@include cardSprite(10, #{$diamondsRow});
 	}
 
 	&#Diamonds10 {
-		@include cardSprite(8, 1);
+		@include cardSprite(9, #{$diamondsRow});
 	}
 
 	&#Diamonds9 {
-		@include cardSprite(7, 1);
+		@include cardSprite(8, #{$diamondsRow});
 	}
 
 	&#Hearts14 {
-		@include cardSprite(12, 0);
+		@include cardSprite(0, #{$heartsRow});
 	}
 
 	&#Hearts13 {
-		@include cardSprite(11, 0);
+		@include cardSprite(12, #{$heartsRow});
 	}
 
 	&#Hearts12 {
-		@include cardSprite(10, 0);
+		@include cardSprite(11, #{$heartsRow});
 	}
 
 	&#Hearts11 {
-		@include cardSprite(9, 0);
+		@include cardSprite(10, #{$heartsRow});
 	}
 
 	&#Hearts10 {
-		@include cardSprite(8, 0);
+		@include cardSprite(9, #{$heartsRow});
 	}
 
 	&#Hearts9 {
-		@include cardSprite(7, 0);
+		@include cardSprite(8, #{$heartsRow});
 	}
 
 	&#Spades14 {
-		@include cardSprite(13, 3);
+		@include cardSprite(0, #{$spadesRow});
 	}
 
 	&#Spades13 {
-		@include cardSprite(12, 3);
+		@include cardSprite(12, #{$spadesRow});
 	}
 
 	&#Spades12 {
-		@include cardSprite(11, 3);
+		@include cardSprite(11, #{$spadesRow});
 	}
 
 	&#Spades11 {
-		@include cardSprite(10, 3);
+		@include cardSprite(10, #{$spadesRow});
 	}
 
 	&#Spades10 {
-		@include cardSprite(8, 3);
+		@include cardSprite(9, #{$spadesRow});
 	}
 
 	&#Spades9 {
-		@include cardSprite(7, 3);
+		@include cardSprite(8, #{$spadesRow});
 	}
 }
