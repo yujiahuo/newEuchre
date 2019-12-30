@@ -2,110 +2,116 @@
 
 @import "variables.scss";
 
+@mixin cardSprite($x, $y){
+	background-position-x: calc(#{$x}*-#{$cardWidth});
+	background-position-y: calc(#{$y}*-#{$cardHeight} + #{$y}*0.8px); //TODO: this is stupid and weird. Find different sprites
+}
+
 .card {
 	height: $cardHeight;
 	width: $cardWidth;
 	position: absolute;
 	border-radius: 3px;
 	transition: all 0.5s;
+	background-image: url('../Images/cards.gif');
 
 	&.cardBack {
-		background: url('../Images/cardBack.png') !important;
+		@include cardSprite(0, 4);
 	}
 
 	&#Clubs14 {
-		background: url('../Images/cards.png') -1px -1px;
+		@include cardSprite(12, 2);
 	}
 
 	&#Clubs13 {
-		background: url('../Images/cards.png') -877px -1px;
+		@include cardSprite(11, 2);
 	}
 
 	&#Clubs12 {
-		background: url('../Images/cards.png') -804px -1px;
+		@include cardSprite(10, 2);
 	}
 
 	&#Clubs11 {
-		background: url('../Images/cards.png') -731px -1px;
+		@include cardSprite(9, 2);
 	}
 
 	&#Clubs10 {
-		background: url('../Images/cards.png') -658px -1px;
+		@include cardSprite(8, 2);
 	}
 
 	&#Clubs9 {
-		background: url('../Images/cards.png') -585px -1px;
+		@include cardSprite(7, 2);
 	}
 
 	&#Diamonds14 {
-		background: url('../Images/cards.png') -1px -295px;
+		@include cardSprite(12, 1);
 	}
 
 	&#Diamonds13 {
-		background: url('../Images/cards.png') -877px -295px;
+		@include cardSprite(11, 1);
 	}
 
 	&#Diamonds12 {
-		background: url('../Images/cards.png') -804px -295px;
+		@include cardSprite(10, 1);
 	}
 
 	&#Diamonds11 {
-		background: url('../Images/cards.png') -731px -295px;
+		@include cardSprite(9, 1);
 	}
 
 	&#Diamonds10 {
-		background: url('../Images/cards.png') -658px -295px;
+		@include cardSprite(8, 1);
 	}
 
 	&#Diamonds9 {
-		background: url('../Images/cards.png') -585px -295px;
+		@include cardSprite(7, 1);
 	}
 
 	&#Hearts14 {
-		background: url('../Images/cards.png') -1px -197px;
+		@include cardSprite(12, 0);
 	}
 
 	&#Hearts13 {
-		background: url('../Images/cards.png') -877px -197px;
+		@include cardSprite(11, 0);
 	}
 
 	&#Hearts12 {
-		background: url('../Images/cards.png') -804px -197px;
+		@include cardSprite(10, 0);
 	}
 
 	&#Hearts11 {
-		background: url('../Images/cards.png') -731px -197px;
+		@include cardSprite(9, 0);
 	}
 
 	&#Hearts10 {
-		background: url('../Images/cards.png') -658px -197px;
+		@include cardSprite(8, 0);
 	}
 
 	&#Hearts9 {
-		background: url('../Images/cards.png') -585px -197px;
+		@include cardSprite(7, 0);
 	}
 
 	&#Spades14 {
-		background: url('../Images/cards.png') -1px -99px;
+		@include cardSprite(13, 3);
 	}
 
 	&#Spades13 {
-		background: url('../Images/cards.png') -877px -99px;
+		@include cardSprite(12, 3);
 	}
 
 	&#Spades12 {
-		background: url('../Images/cards.png') -804px -99px;
+		@include cardSprite(11, 3);
 	}
 
 	&#Spades11 {
-		background: url('../Images/cards.png') -731px -99px;
+		@include cardSprite(10, 3);
 	}
 
 	&#Spades10 {
-		background: url('../Images/cards.png') -658px -99px;
+		@include cardSprite(8, 3);
 	}
 
 	&#Spades9 {
-		background: url('../Images/cards.png') -585px -99px;
+		@include cardSprite(7, 3);
 	}
 }
