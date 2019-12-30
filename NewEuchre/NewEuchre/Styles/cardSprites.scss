@@ -2,9 +2,15 @@
 
 @import "variables.scss";
 
-@mixin cardSprite($x, $y){
-	background-position-x: calc(#{$x}*-#{$cardWidth});
-	background-position-y: calc(#{$y}*-#{$cardHeight});
+@mixin cardSprite($x, $y, $important: false){
+	@if $important {
+		background-position-x: calc(#{$x}*-#{$cardWidth}) !important;
+		background-position-y: calc(#{$y}*-#{$cardHeight}) !important;
+	}
+	@else {
+		background-position-x: calc(#{$x}*-#{$cardWidth});
+		background-position-y: calc(#{$y}*-#{$cardHeight});
+	}
 }
 
 .card {
@@ -14,7 +20,7 @@
 	background-image: url('../Images/cards.png');
 
 	&.cardBack {
-		@include cardSprite(2, 4);
+		@include cardSprite(2, 4, true);
 	}
 
 	&#Clubs14 {

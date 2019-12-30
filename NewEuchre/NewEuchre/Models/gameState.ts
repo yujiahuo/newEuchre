@@ -58,14 +58,14 @@ class SingleGameState {
 	public gameStage: GameStage;
 
 	//Hand stuff
-	public deck: Deck;
+	public deck: Deck; //also the kitty when cards are dealt from it
 	public dealer: Player;
 
-	//hand - bidding
+	//Hand - bidding
 	public trumpCandidate: Card; //turned up card
 	public bidResult: BidResult | null;
 
-	//hand - tricks
+	//Hand - tricks
 	public trickNumber: number;
 	public nsTricksWon: number;
 	public ewTricksWon: number;

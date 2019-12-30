@@ -5,8 +5,8 @@
   transition: all 0.5s;
   background-image: url("../Images/cards.png"); }
   .card.cardBack {
-    background-position-x: calc(2*-120px);
-    background-position-y: calc(4*-160px); }
+    background-position-x: calc(2*-120px) !important;
+    background-position-y: calc(4*-160px) !important; }
   .card#Clubs14 {
     background-position-x: calc(0*-120px);
     background-position-y: calc(0*-160px); }

@@ -1,78 +1,75 @@
 ﻿@import "variables.scss";
 
 .cardsContainer{
-	display: grid;
-	grid-template-columns: 25% auto 25%;
-	grid-template-rows: 20% auto 20%;
 	height: 100%;
 	width: 100%;
+	//max-height: 900px;
+	//max-width: 900px;
+	//margin: auto; //Centers when we're over max width
 
-	.hand{
-		position: relative;
-		justify-self: center;
-		align-self: center;
+	.card{
+		position: absolute;
+		margin: 0;
 
-		&.southHand{
-			grid-column: 2;
-			grid-row: 3;
+		&.south{
+			top: calc(100% - #{$cardHeight} - #{$cardPadding});
+			left: calc(50% - #{$cardWidth}/2);
+
+			&.played{
+				top: calc(100% - #{$cardHeight} - 250px);
+			}
 		}
 
-		&.westHand{
-			grid-column: 1;
-			grid-row: 2;
+		&.west{
+			top: calc(50% - #{$cardHeight}/2);
+			left: calc(4*#{$cardPadding});
+
+			&.played{
+				left: 350px;
+			}
 		}
 
-		&.northHand{
-			grid-column: 2;
-			grid-row: 1;
+		&.north{
+			top: #{$cardPadding};
+			left: calc(50% - #{$cardWidth}/2);
+
+			&.played{
+				top: 250px;
+			}
 		}
 
-		&.eastHand{
-			grid-column: 3;
-			grid-row: 2;
+		&.east{
+			top: calc(50% - #{$cardHeight}/2);
+			left: calc(100% - #{$cardWidth} - 4*#{$cardPadding});
+
+			&.played{
+				left: calc(100% - #{$cardWidth} - 350px);
+			}
+		}
+
+		&.center{
+			top: calc(50% - #{$cardHeight}/2);
+			left: calc(50% - #{$cardWidth}/2);
 		}
 
 		&.hand1{
-			left: calc(-2*#{$handCardDistance});
+			margin-left: calc(-2*#{$handCardDistance});
 		}
+
 		&.hand2{
-			left: calc(-1*#{$handCardDistance});
+			margin-left: calc(-1*#{$handCardDistance});
 		}
+
 		&.hand3{
-			left: 0;
+			margin: 0;
 		}
+
 		&.hand4{
-			left: calc(1*#{$handCardDistance});
+			margin-left: calc(1*#{$handCardDistance});
 		}
+
 		&.hand5{
-			left: calc(2*#{$handCardDistance});
-		}
-	}
-
-	.played{
-		position: relative;
-		grid-column: 2;
-		grid-row: 2;
-		margin: 50px;
-
-		&.southPlayed{
-			align-self: flex-end;
-			justify-self: center;
-		}
-
-		&.westPlayed{
-			align-self: center;
-			justify-self: left;
-		}
-
-		&.northPlayed{
-			align-self: flex-start;
-			justify-self: center;
-		}
-
-		&.eastPlayed{
-			align-self: center;
-			justify-self: right;
+			margin-left: calc(2*#{$handCardDistance});
 		}
 	}
 }
