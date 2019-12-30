@@ -2,12 +2,10 @@
 .card {
   height: 160px;
   width: 120px;
-  position: absolute;
-  border-radius: 3px;
   transition: all 0.5s;
   background-image: url("../Images/cards.png"); }
   .card.cardBack {
-    background-position-x: calc(0*-120px);
+    background-position-x: calc(2*-120px);
     background-position-y: calc(4*-160px); }
   .card#Clubs14 {
     background-position-x: calc(0*-120px);

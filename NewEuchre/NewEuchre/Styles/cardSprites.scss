@@ -10,13 +10,11 @@
 .card {
 	height: $cardHeight;
 	width: $cardWidth;
-	position: absolute;
-	border-radius: 3px;
 	transition: all 0.5s;
 	background-image: url('../Images/cards.png');
 
 	&.cardBack {
-		@include cardSprite(0, 4);
+		@include cardSprite(2, 4);
 	}
 
 	&#Clubs14 {

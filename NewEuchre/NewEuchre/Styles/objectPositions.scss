@@ -9,67 +9,70 @@
 
 	.hand{
 		position: relative;
-		width: calc(#{$cardWidth} + 4*#{$handCardDistance});
-		height: $cardHeight;
 		justify-self: center;
 		align-self: center;
 
-		.card:nth-child(1){
+		&.southHand{
+			grid-column: 2;
+			grid-row: 3;
+		}
+
+		&.westHand{
+			grid-column: 1;
+			grid-row: 2;
+		}
+
+		&.northHand{
+			grid-column: 2;
+			grid-row: 1;
+		}
+
+		&.eastHand{
+			grid-column: 3;
+			grid-row: 2;
+		}
+
+		&.hand1{
+			left: calc(-2*#{$handCardDistance});
+		}
+		&.hand2{
+			left: calc(-1*#{$handCardDistance});
+		}
+		&.hand3{
 			left: 0;
 		}
-		.card:nth-child(2){
+		&.hand4{
 			left: calc(1*#{$handCardDistance});
 		}
-		.card:nth-child(3){
+		&.hand5{
 			left: calc(2*#{$handCardDistance});
 		}
-		.card:nth-child(4){
-			left: calc(3*#{$handCardDistance});
-		}
-		.card:nth-child(5){
-			left: calc(4*#{$handCardDistance});
-		}
-	}
-
-	.southHand{
-		grid-column: 2;
-		grid-row: 3;
-	}
-
-	.westHand{
-		grid-column: 1;
-		grid-row: 2;
-	}
-
-	.northHand{
-		grid-column: 2;
-		grid-row: 1;
-	}
-
-	.eastHand{
-		grid-column: 3;
-		grid-row: 2;
 	}
 
 	.played{
+		position: relative;
 		grid-column: 2;
 		grid-row: 2;
-		position: relative;
+		margin: 50px;
 
-		.southPlayed{
-			bottom: 0;
+		&.southPlayed{
+			align-self: flex-end;
+			justify-self: center;
 		}
 
-		.westPlayed{
-			left: 0;
+		&.westPlayed{
+			align-self: center;
+			justify-self: left;
 		}
 
-		.northPlayed{
-			top: 0;
+		&.northPlayed{
+			align-self: flex-start;
+			justify-self: center;
 		}
 
-		.eastPlayed{
-			right: 0;
+		&.eastPlayed{
+			align-self: center;
+			justify-self: right;
 		}
 	}
 }
