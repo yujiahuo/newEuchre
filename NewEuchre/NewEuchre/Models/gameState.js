@@ -40,6 +40,16 @@ var SingleGameState = (function () {
         this.nsScore = 0;
         this.ewScore = 0;
         this.gameStage = GameStage.Deal;
+        //this.deck = null;
+        //this.dealer = players[Seat.South];
+        //this.trumpCandidate = null;
+        //this.bidResult = null;
+        //this.trickNumber = 0;
+        //this.nsTricksWon = 0;
+        //this.ewTricksWon = 0;
+        //this.suitLead = null;
+        //this.playedCards = [];
+        //this.currentPlayer = players[0];
     }
     SingleGameState.prototype.getNextPlayer = function (player) {
         return this.players[nextSeat(player.seat)];

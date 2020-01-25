@@ -9,13 +9,14 @@ var GameController = (function () {
             return;
         this.__currentGame = new SingleGameState(this.__session.players);
         this.__continue = true;
-        this.__currentGame.startNewHand();
+        HandController.startNewHand(this.__currentGame);
         for (var _i = 0, _a = this.__session.players; _i < _a.length; _i++) {
             var player = _a[_i];
             player.init();
         }
     };
     GameController.prototype.playNextStep = function () {
+        this.startGame();
         if (this.__currentGame.gameStage === GameStage.BidRoundOne ||
             this.__currentGame.gameStage === GameStage.BidRoundTwo) {
             this.__getBid();

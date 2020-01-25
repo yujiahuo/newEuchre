@@ -16,13 +16,15 @@ class GameController {
 
 		this.__currentGame = new SingleGameState(this.__session.players);
 		this.__continue = true;
-		this.__currentGame.startNewHand();
+		HandController.startNewHand(this.__currentGame);
 		for (let player of this.__session.players) {
 			player.init();
 		}
 	}
 
 	public playNextStep(): void {
+		this.startGame();
+
 		if (this.__currentGame.gameStage === GameStage.BidRoundOne ||
 			this.__currentGame.gameStage === GameStage.BidRoundTwo) {
 			this.__getBid()

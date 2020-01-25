@@ -58,11 +58,11 @@ class SingleGameState {
 	public gameStage: GameStage;
 
 	//Hand stuff
-	public deck: Deck; //also the kitty when cards are dealt from it
+	public deck: Deck | null; //also the kitty when cards are dealt from it
 	public dealer: Player;
 
 	//Hand - bidding
-	public trumpCandidate: Card; //turned up card
+	public trumpCandidate: Card | null; //turned up card
 	public bidResult: BidResult | null;
 
 	//Hand - tricks
@@ -80,6 +80,20 @@ class SingleGameState {
 		this.nsScore = 0;
 		this.ewScore = 0;
 		this.gameStage = GameStage.Deal;
+
+		//this.deck = null;
+		//this.dealer = players[Seat.South];
+
+		//this.trumpCandidate = null;
+		//this.bidResult = null;
+
+		//this.trickNumber = 0;
+		//this.nsTricksWon = 0;
+		//this.ewTricksWon = 0;
+
+		//this.suitLead = null;
+		//this.playedCards = [];
+		//this.currentPlayer = players[0];
 	}
 
 	public getNextPlayer(player: Player): Player {

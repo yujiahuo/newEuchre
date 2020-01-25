@@ -1,21 +1,21 @@
 class HandController {
-	public static startNewHand() {
-		this.deck = new Deck();
-		if (!this.dealer) {
-			this.dealer = this.players[rng.nextInRange(0, 3)];
+	public static startNewHand(gameState: SingleGameState) {
+		gameState.deck = new Deck();
+		if (!gameState.dealer) {
+			gameState.dealer = gameState.players[rng.nextInRange(0, 3)];
 		}
 		else {
-			this.dealer = this.players[nextSeat(this.dealer.seat)];
+			gameState.dealer = gameState.players[nextSeat(gameState.dealer.seat)];
 		}
 
-		this.__dealHands();
+		this.__dealHands(gameState);
 	}
 
-	private static __dealHands(): void {
-		let player: Player = this.dealer;
+	private static __dealHands(gameState: SingleGameState): void {
+		let player: Player = gameState.dealer;
 		for (let numToDeal of [3, 2, 3, 2, 2, 3, 2, 3]) {
-			player = this.getNextPlayer(player);
-			player.hand.push(...this.deck.popCards(numToDeal));
+			player = gameState.getNextPlayer(player);
+			player.hand.push(...gameState.deck.popCards(numToDeal));
 		}
 	}
 }
