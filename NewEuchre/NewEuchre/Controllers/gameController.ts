@@ -8,15 +8,18 @@ class GameController {
 	}
 
 	public startSession(): void {
+		console.log("Start session");
 		this.__session = new SessionState();
 	}
 
 	public startGame(): void {
 		if (!this.__session) return;
 
+		console.log("Start game");
+
 		this.__currentGame = new SingleGameState(this.__session.players);
 		this.__continue = true;
-		HandController.startNewHand(this.__currentGame);
+		HandController.startNewHand(this.__currentGame, this.__session.settings.dealStyle);
 		for (let player of this.__session.players) {
 			player.init();
 		}
@@ -47,9 +50,10 @@ class GameController {
 	}
 }
 
+// Go forth and conquer
 var controller = new GameController();
 controller.startSession();
-controller.startGame();
+//controller.startGame();
 
 function playNextStep() {
 	controller.playNextStep();

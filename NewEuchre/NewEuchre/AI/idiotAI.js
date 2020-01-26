@@ -1,7 +1,7 @@
 /******************************************************
 /* Actually it's just lazy
 /*******************************************************/
-var IdiotAI = (function () {
+var IdiotAI = /** @class */ (function () {
     function IdiotAI() {
     }
     //tslint:disable-next-line:no-empty

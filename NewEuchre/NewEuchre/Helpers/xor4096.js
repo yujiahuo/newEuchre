@@ -9,7 +9,7 @@
 // http://arxiv.org/pdf/1004.3115v1.pdf
 //
 //tslint:disable:no-bitwise
-var XorGen = (function () {
+var XorGen = /** @class */ (function () {
     function XorGen(seed) {
         var t;
         var v;

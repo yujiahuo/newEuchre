@@ -2,7 +2,7 @@
 .card {
   height: 160px;
   width: 120px;
-  transition: all 0.5s;
+  transition: top 0.5s, left 0.5s, margin 0.5s;
   background-image: url("../Images/cards.png"); }
   .card.cardBack {
     background-position-x: calc(2*-120px) !important;

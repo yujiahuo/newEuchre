@@ -10,7 +10,7 @@ var Seat;
     Seat[Seat["North"] = 2] = "North";
     Seat[Seat["East"] = 3] = "East";
 })(Seat || (Seat = {}));
-var Player = (function () {
+var Player = /** @class */ (function () {
     function Player(seat, ai) {
         this.ai = null;
         this.seat = seat;

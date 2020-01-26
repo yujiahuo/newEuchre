@@ -1,15 +1,17 @@
-var GameController = (function () {
+var GameController = /** @class */ (function () {
     function GameController() {
     }
     GameController.prototype.startSession = function () {
+        console.log("Start session");
         this.__session = new SessionState();
     };
     GameController.prototype.startGame = function () {
         if (!this.__session)
             return;
+        console.log("Start game");
         this.__currentGame = new SingleGameState(this.__session.players);
         this.__continue = true;
-        HandController.startNewHand(this.__currentGame);
+        HandController.startNewHand(this.__currentGame, this.__session.settings.dealStyle);
         for (var _i = 0, _a = this.__session.players; _i < _a.length; _i++) {
             var player = _a[_i];
             player.init();
@@ -33,9 +35,10 @@ var GameController = (function () {
     };
     return GameController;
 }());
+// Go forth and conquer
 var controller = new GameController();
 controller.startSession();
-controller.startGame();
+//controller.startGame();
 function playNextStep() {
     controller.playNextStep();
 }

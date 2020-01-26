@@ -26,5 +26,9 @@
   {
     "outputFile": "Styles/core.css",
     "inputFile": "Styles/core.scss"
+  },
+  {
+    "outputFile": "Styles/variables.css",
+    "inputFile": "Styles/variables.scss"
   }
 ]

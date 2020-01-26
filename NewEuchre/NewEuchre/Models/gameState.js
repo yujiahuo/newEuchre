@@ -6,7 +6,7 @@ var GameStage;
     GameStage[GameStage["Discard"] = 3] = "Discard";
     GameStage[GameStage["Playing"] = 4] = "Playing";
 })(GameStage || (GameStage = {}));
-var SessionState = (function () {
+var SessionState = /** @class */ (function () {
     function SessionState() {
         this.__setDefaultSettings();
         this.nsGamesWon = 0;
@@ -23,6 +23,16 @@ var SessionState = (function () {
             statMode: false,
             messageLevel: MessageLevel.Step,
             numGamesToPlay: 1,
+            dealStyle: [
+                [0, 1, 2],
+                [0, 1],
+                [0, 1, 2],
+                [0, 1],
+                [3, 4],
+                [2, 3, 4],
+                [3, 4],
+                [2, 3, 4]
+            ]
         };
         this.players = [
             new Player(Seat.South),
@@ -33,7 +43,7 @@ var SessionState = (function () {
     };
     return SessionState;
 }());
-var SingleGameState = (function () {
+var SingleGameState = /** @class */ (function () {
     function SingleGameState(players) {
         this.playedCards = []; //array of cards that have been played this trick so far
         this.players = players;

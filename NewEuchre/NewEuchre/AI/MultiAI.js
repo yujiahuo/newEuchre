@@ -1,4 +1,4 @@
-var MultiAI = (function () {
+var MultiAI = /** @class */ (function () {
     function MultiAI(biddingAI, playingAI) {
         this.biddingAI = biddingAI;
         this.playingAI = playingAI;

@@ -1,4 +1,4 @@
-var BiddingTestAI = (function () {
+var BiddingTestAI = /** @class */ (function () {
     function BiddingTestAI(orderUp, trump, goAlone, discard) {
         this.__orderUp = orderUp;
         this.__discard = discard || null;

@@ -1,74 +1,74 @@
 ﻿@import "variables.scss";
 
-.cardsContainer{
+.cardsContainer {
 	height: 100%;
 	width: 100%;
-	//max-height: 900px;
-	//max-width: 900px;
-	//margin: auto; //Centers when we're over max width
 
-	.card{
+	.card {
 		position: absolute;
 		margin: 0;
+		top: calc(50% - #{$cardHeight}/2);
+		left: calc(50% - #{$cardWidth}/2);
+		z-index: 0;
 
-		&.south{
+		&.south {
 			top: calc(100% - #{$cardHeight} - #{$cardPadding});
 			left: calc(50% - #{$cardWidth}/2);
 
-			&.played{
-				top: calc(100% - #{$cardHeight} - 250px);
+			&.played {
+				top: calc(100% - #{$cardHeight} - 25%);
 			}
 		}
 
-		&.west{
+		&.west {
 			top: calc(50% - #{$cardHeight}/2);
 			left: calc(4*#{$cardPadding});
 
-			&.played{
-				left: 350px;
+			&.played {
+				left: 30%;
 			}
 		}
 
-		&.north{
+		&.north {
 			top: #{$cardPadding};
 			left: calc(50% - #{$cardWidth}/2);
 
-			&.played{
-				top: 250px;
+			&.played {
+				top: 25%;
 			}
 		}
 
-		&.east{
+		&.east {
 			top: calc(50% - #{$cardHeight}/2);
 			left: calc(100% - #{$cardWidth} - 4*#{$cardPadding});
 
-			&.played{
-				left: calc(100% - #{$cardWidth} - 350px);
+			&.played {
+				left: calc(100% - #{$cardWidth} - 30%);
 			}
 		}
 
-		&.center{
+		&.center {
 			top: calc(50% - #{$cardHeight}/2);
 			left: calc(50% - #{$cardWidth}/2);
 		}
 
-		&.hand1{
+		&.hand1 {
 			margin-left: calc(-2*#{$handCardDistance});
 		}
 
-		&.hand2{
+		&.hand2 {
 			margin-left: calc(-1*#{$handCardDistance});
 		}
 
-		&.hand3{
+		&.hand3 {
 			margin: 0;
 		}
 
-		&.hand4{
+		&.hand4 {
 			margin-left: calc(1*#{$handCardDistance});
 		}
 
-		&.hand5{
+		&.hand5 {
 			margin-left: calc(2*#{$handCardDistance});
 		}
 	}

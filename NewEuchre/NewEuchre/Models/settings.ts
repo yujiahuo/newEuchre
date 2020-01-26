@@ -12,4 +12,5 @@ interface Settings {
 	statMode: boolean;
 	messageLevel: MessageLevel;
 	numGamesToPlay: number;
+	dealStyle: number[][];
 }

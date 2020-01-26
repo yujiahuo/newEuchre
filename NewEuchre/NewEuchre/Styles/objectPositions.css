@@ -3,27 +3,30 @@
   width: 100%; }
   .cardsContainer .card {
     position: absolute;
-    margin: 0; }
+    margin: 0;
+    top: calc(50% - 160px/2);
+    left: calc(50% - 120px/2);
+    z-index: 0; }
     .cardsContainer .card.south {
       top: calc(100% - 160px - 20px);
       left: calc(50% - 120px/2); }
       .cardsContainer .card.south.played {
-        top: calc(100% - 160px - 250px); }
+        top: calc(100% - 160px - 25%); }
     .cardsContainer .card.west {
       top: calc(50% - 160px/2);
       left: calc(4*20px); }
       .cardsContainer .card.west.played {
-        left: 350px; }
+        left: 30%; }
     .cardsContainer .card.north {
       top: 20px;
       left: calc(50% - 120px/2); }
       .cardsContainer .card.north.played {
-        top: 250px; }
+        top: 25%; }
     .cardsContainer .card.east {
       top: calc(50% - 160px/2);
       left: calc(100% - 120px - 4*20px); }
       .cardsContainer .card.east.played {
-        left: calc(100% - 120px - 350px); }
+        left: calc(100% - 120px - 30%); }
     .cardsContainer .card.center {
       top: calc(50% - 160px/2);
       left: calc(50% - 120px/2); }

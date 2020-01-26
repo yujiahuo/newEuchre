@@ -11,6 +11,8 @@
 	<script src="AI/decentAI.js" type="text/javascript"></script>
 	<script src="AI/idiotAI.js" type="text/javascript"></script>
 	<script src="AI/testAI.js" type="text/javascript"></script>
+	<script src="Controllers/animationController.js" type="text/javascript"></script>
+	<script src="Controllers/handController.js" type="text/javascript"></script>
 	<script src="Controllers/gameController.js" type="text/javascript"></script>
 	<link rel="stylesheet" type="text/css" href="Styles/variables.css" id="style" />
 	<link rel="stylesheet" type="text/css" href="Styles/cardSprites.css" id="style" />
@@ -228,39 +230,36 @@
 		</div>
 
 		<div class="gameSpace">
-			<button id="nextStep" onclick="playNextStep()">Next Step</button>
+			<button id="startGame" onclick="playNextStep()">Next Step</button>
 
 			<div class="cardsContainer">
-				<div id="Diamonds14" class="card hand south hand1"></div>
-				<div id="Diamonds13" class="card hand south hand2"></div>
-				<div id="Diamonds12" class="card hand south hand3"></div>
-				<div id="Diamonds11" class="card hand south hand4"></div>
-				<div id="Diamonds10" class="card hand south hand5"></div>
+				<div id="Diamonds14" class="card cardBack"></div>
+				<div id="Diamonds13" class="card cardBack"></div>
+				<div id="Diamonds12" class="card cardBack"></div>
+				<div id="Diamonds11" class="card cardBack"></div>
+				<div id="Diamonds10" class="card cardBack"></div>
+				<div id="Diamonds9" class="card cardBack"></div>
 
-				<div id="Clubs14" class="card hand west hand1 cardBack"></div>
-				<div id="Clubs13" class="card hand west hand2 cardBack"></div>
-				<div id="Clubs12" class="card hand west hand3 cardBack"></div>
-				<div id="Clubs11" class="card hand west hand4 cardBack"></div>
-				<div id="Clubs10" class="card hand west hand5 cardBack"></div>
+				<div id="Clubs14" class="card cardBack"></div>
+				<div id="Clubs13" class="card cardBack"></div>
+				<div id="Clubs12" class="card cardBack"></div>
+				<div id="Clubs11" class="card cardBack"></div>
+				<div id="Clubs10" class="card cardBack"></div>
+				<div id="Clubs9" class="card cardBack"></div>
 
-				<div id="Hearts14" class="card hand north hand1"></div>
-				<div id="Hearts13" class="card hand north hand2"></div>
-				<div id="Hearts12" class="card hand north hand3"></div>
-				<div id="Hearts11" class="card hand north hand4"></div>
-				<div id="Hearts10" class="card hand north hand5"></div>
+				<div id="Hearts14" class="card cardBack"></div>
+				<div id="Hearts13" class="card cardBack"></div>
+				<div id="Hearts12" class="card cardBack"></div>
+				<div id="Hearts11" class="card cardBack"></div>
+				<div id="Hearts10" class="card cardBack"></div>
+				<div id="Hearts9" class="card cardBack"></div>
 
-				<div id="Spades14" class="card hand east hand1"></div>
-				<div id="Spades13" class="card hand east hand2"></div>
-				<div id="Spades12" class="card hand east hand3"></div>
-				<div id="Spades11" class="card hand east hand4"></div>
-				<div id="Spades10" class="card hand east hand5"></div>
-
-				
-				<div id="Diamonds9" class="card played south"></div>
-				<div id="Clubs9" class="card played west"></div>
-				<div id="Hearts9" class="card played north"></div>
-				<div id="Spades9" class="card played east"></div>
-				
+				<div id="Spades14" class="card cardBack"></div>
+				<div id="Spades13" class="card cardBack"></div>
+				<div id="Spades12" class="card cardBack"></div>
+				<div id="Spades11" class="card cardBack"></div>
+				<div id="Spades10" class="card cardBack"></div>
+				<div id="Spades9" class="card cardBack"></div>
 			</div>
 		</div>
 	</div>

@@ -39,6 +39,16 @@ class SessionState {
 			statMode: false,
 			messageLevel: MessageLevel.Step,
 			numGamesToPlay: 1,
+			dealStyle: [
+				[0, 1, 2],
+				[0, 1],
+				[0, 1, 2],
+				[0, 1],
+				[3, 4],
+				[2, 3, 4],
+				[3, 4],
+				[2, 3, 4]
+			]
 		};
 
 		this.players = [

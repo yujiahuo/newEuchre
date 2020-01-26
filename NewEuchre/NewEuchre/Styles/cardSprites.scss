@@ -16,7 +16,9 @@
 .card {
 	height: $cardHeight;
 	width: $cardWidth;
-	transition: all 0.5s;
+	transition: top 0.5s,
+				left 0.5s,
+				margin 0.5s;
 	background-image: url('../Images/cards.png');
 
 	&.cardBack {
