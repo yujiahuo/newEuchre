@@ -12,6 +12,7 @@
 	<script src="AI/idiotAI.js" type="text/javascript"></script>
 	<script src="AI/testAI.js" type="text/javascript"></script>
 	<script src="Controllers/animationController.js" type="text/javascript"></script>
+	<script src="Controllers/BidController.js" type="text/javascript"></script>
 	<script src="Controllers/handController.js" type="text/javascript"></script>
 	<script src="Controllers/gameController.js" type="text/javascript"></script>
 	<link rel="stylesheet" type="text/css" href="Styles/variables.css" id="style" />
@@ -230,7 +231,13 @@
 		</div>
 
 		<div class="gameSpace">
-			<button id="startGame" onclick="playNextStep()">Next Step</button>
+			<button id="startGame" onclick="controller.startGame()">Start game</button>
+			<button id="nextStep" class="temporary" onclick="controller.playNextStep()">Next step</button>
+			<button id="orderUp" class="bidRoundOne" onclick="controller.orderUp()">Order up</button>
+			<button id="spadeTrump" class="bidRoundTwo" onclick="controller.spadesTrump()">Spades trump</button>
+			<button id="heartsTrump" class="bidRoundTwo" onclick="controller.heartsTrump()">Hearts trump</button>
+			<button id="diamondsTrump" class="bidRoundTwo" onclick="controller.diamondsTrump()">Diamonds trump</button>
+			<button id="clubsTrump" class="bidRoundTwo" onclick="controller.clubsTrump()">Clubs trump</button>
 
 			<div class="cardsContainer">
 				<div id="Diamonds14" class="card cardBack"></div>
@@ -261,7 +268,14 @@
 				<div id="Spades10" class="card cardBack"></div>
 				<div id="Spades9" class="card cardBack"></div>
 			</div>
+			<div id="dealerChip" class=""></div>
 		</div>
 	</div>
 </body>
 </html>
+
+<script>
+	// Go forth and conquer
+	var controller = new GameController();
+	controller.startSession();
+</script>

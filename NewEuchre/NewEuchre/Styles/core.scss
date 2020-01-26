@@ -3,12 +3,20 @@
 	box-sizing: border-box;
 }
 
-.gameSpace{
+.gameSpace {
 	height: 100vh;
 	width: 100%;
 	background-color: mediumseagreen;
-	
-	#nextStep{
-		position: fixed;
+
+	.temporary {
+		color: gray;
+	}
+
+	.bidRoundOne {
+		color: blue;
+	}
+
+	.bidRoundTwo {
+		color: mediumvioletred;
 	}
 }

@@ -1,4 +1,19 @@
-﻿.cardsContainer {
+﻿#dealerChip {
+  position: absolute; }
+  #dealerChip.south {
+    top: calc(100% - 160px - 20px);
+    left: calc(50% + 120px); }
+  #dealerChip.west {
+    top: calc(50% + 4*20px);
+    left: 20px; }
+  #dealerChip.north {
+    top: 20px;
+    left: calc(50% + 120px); }
+  #dealerChip.east {
+    top: calc(50% + 4*20px);
+    left: calc(100% - 13*20px); }
+
+.cardsContainer {
   height: 100%;
   width: 100%; }
   .cardsContainer .card {

@@ -1,4 +1,4 @@
-﻿/* card dimensions are height:96 width:72. 1px between cards*/
+﻿//TODO: rename to just sprites
 
 @import "variables.scss";
 
@@ -11,6 +11,12 @@
 		background-position-x: calc(#{$x}*-#{$cardWidth});
 		background-position-y: calc(#{$y}*-#{$cardHeight});
 	}
+}
+#dealerChip {
+	background: url('../Images/dealerButton.png');
+	background-size: contain;
+	height: 50px;
+	width: 50px;
 }
 
 .card {

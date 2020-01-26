@@ -6,5 +6,9 @@
   height: 100vh;
   width: 100%;
   background-color: mediumseagreen; }
-  .gameSpace #nextStep {
-    position: fixed; }
+  .gameSpace .temporary {
+    color: gray; }
+  .gameSpace .bidRoundOne {
+    color: blue; }
+  .gameSpace .bidRoundTwo {
+    color: mediumvioletred; }

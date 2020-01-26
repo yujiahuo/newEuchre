@@ -1,9 +1,14 @@
 var HandController = /** @class */ (function () {
     function HandController() {
     }
-    HandController.startNewHand = function (gameState, dealStyle) {
-        console.log("Start new hand");
+    // Create new deck
+    // Set dealer
+    // Deal hands
+    HandController.setupNewHand = function (gameState, dealStyle) {
+        console.log("New hand");
+        gameState.gameStage = GameStage.Deal;
         gameState.deck = new Deck();
+        //TODO: factor out
         if (!gameState.dealer) {
             gameState.dealer = gameState.players[rng.nextInRange(0, 3)];
         }
@@ -25,7 +30,6 @@ var HandController = /** @class */ (function () {
         console.log(gameState.players[Seat.West].hand);
         console.log(gameState.players[Seat.North].hand);
         console.log(gameState.players[Seat.East].hand);
-        AnimationController.dealCards(gameState.players, gameState.dealer.seat, dealStyle);
     };
     return HandController;
 }());

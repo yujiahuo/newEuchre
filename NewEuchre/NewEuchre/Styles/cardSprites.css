@@ -1,4 +1,9 @@
-﻿/* card dimensions are height:96 width:72. 1px between cards*/
+﻿#dealerChip {
+  background: url("../Images/dealerButton.png");
+  background-size: contain;
+  height: 50px;
+  width: 50px; }
+
 .card {
   height: 160px;
   width: 120px;

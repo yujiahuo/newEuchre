@@ -5,6 +5,7 @@ var GameStage;
     GameStage[GameStage["BidRoundTwo"] = 2] = "BidRoundTwo";
     GameStage[GameStage["Discard"] = 3] = "Discard";
     GameStage[GameStage["Playing"] = 4] = "Playing";
+    GameStage[GameStage["EndGame"] = 5] = "EndGame";
 })(GameStage || (GameStage = {}));
 var SessionState = /** @class */ (function () {
     function SessionState() {

@@ -3,7 +3,8 @@ enum GameStage {
 	BidRoundOne,
 	BidRoundTwo,
 	Discard,
-	Playing
+	Playing,
+	EndGame
 }
 
 interface BidResult {

@@ -1,9 +1,8 @@
 var AnimationController = /** @class */ (function () {
     function AnimationController() {
     }
-    AnimationController.initGame = function () {
-    };
-    AnimationController.dealCards = function (players, dealerSeat, dealStyle) {
+    // All this stuff always happens together and needs to be timed together
+    AnimationController.dealCardsAndShowTrump = function (players, dealerSeat, trumpCandidateID, dealStyle) {
         var player = players[dealerSeat];
         var cardID;
         var delay = 0;
@@ -25,6 +24,18 @@ var AnimationController = /** @class */ (function () {
                 }
             }
         }
+        this.__setDealerChip(dealerSeat);
+        this.__showTrumpCandidate(trumpCandidateID, delay += 200);
+        //TODO: hide the kitty =(OwO)=
+    };
+    AnimationController.__showTrumpCandidate = function (cardID, delay) {
+        var cardElem = document.getElementById(cardID);
+        this.__flipCard(cardID, true, delay);
+        cardElem.classList.add("trumpCandidate");
+        cardElem.style.zIndex = "100";
+    };
+    AnimationController.__setDealerChip = function (seat) {
+        document.getElementById("dealerChip").className = Seat[seat].toLowerCase();
     };
     AnimationController.__flipCard = function (cardID, faceUp, delay) {
         var cardElem = document.getElementById(cardID);

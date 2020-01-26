@@ -1,7 +1,7 @@
 class GameController {
 	private __session: SessionState;
 	private __currentGame: SingleGameState;
-	private __continue: boolean;
+	private __isHoomanTime: boolean;
 
 	constructor() {
 
@@ -18,43 +18,89 @@ class GameController {
 		console.log("Start game");
 
 		this.__currentGame = new SingleGameState(this.__session.players);
-		this.__continue = true;
-		HandController.startNewHand(this.__currentGame, this.__session.settings.dealStyle);
+		this.__isHoomanTime = false;
+
+		HandController.setupNewHand(this.__currentGame, this.__session.settings.dealStyle);
 		for (let player of this.__session.players) {
 			player.init();
 		}
+		BidController.setupBidRoundOne(this.__currentGame);
+		AnimationController.dealCardsAndShowTrump(
+			this.__currentGame.players,
+			this.__currentGame.dealer.seat,
+			this.__currentGame.trumpCandidate.id,
+			this.__session.settings.dealStyle,
+		);
+		this.playNextStep();
 	}
 
 	public playNextStep(): void {
-		this.startGame();
+		if (this.__isHoomanTime) {
+			this.__liftShield();
+			return;
+		}
 
-		if (this.__currentGame.gameStage === GameStage.BidRoundOne ||
-			this.__currentGame.gameStage === GameStage.BidRoundTwo) {
-			this.__getBid()
+		switch (this.__currentGame.gameStage) {
+			case GameStage.BidRoundOne: {
+				BidController.getNextBidRoundOne(this.__currentGame);
+				break;
+			}
+			case GameStage.BidRoundTwo: {
+				BidController.getNextBidRoundTwo(this.__currentGame);
+				break;
+			}
+			case GameStage.Discard: {
+				break;
+			}
+			case GameStage.Playing: {
+				break;
+			}
+			case GameStage.EndGame: {
+				break;
+			}
+			default: { // Something probably broke
+				console.log("Idk what happened here");
+				return;
+			}
 		}
 	}
 
-	private __getBid() {
-		let bidRound = this.__currentGame.gameStage;
-		let player = this.__currentGame.currentPlayer;
-
-		//player.chooseOrderUp();
+	public orderUp(): void {
+		this.__setShield();
+		// Advance to discard stage is appropriate
+		// Set trump and advance to playing stage
 	}
 
-	private __discardCard() {
+	public spadesTrump(): void {
+		this.__setShield();
+		// Set trump and advance to playing stage
+	}
+
+	public heartsTrump(): void {
+		this.__setShield();
+		// Set trump and advance to playing stage
+	}
+
+	public diamondsTrump(): void {
+		this.__setShield();
+		// Set trump and advance to playing stage
+	}
+
+	public clubsTrump(): void {
+		this.__setShield();
+		// Set trump and advance to playing stage
+	}
+
+	public discard(): void {
+		this.__setShield();
+		// Remove card in hand and advance to playing
+	}
+
+	private __setShield(): void {
 
 	}
 
-	private __playCard() {
+	private __liftShield(): void {
 
 	}
-}
-
-// Go forth and conquer
-var controller = new GameController();
-controller.startSession();
-//controller.startGame();
-
-function playNextStep() {
-	controller.playNextStep();
 }
